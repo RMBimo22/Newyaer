@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Default font for body */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #1d1e2c, #4b6cb7);
+  color: white;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Lobster', cursive; /* Lobster font for headings */
+  font-size: 3rem; /* Adjusted font size for responsiveness */
+  margin-bottom: 20px;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.time {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 120px; /* Fixed width for consistency */
+}
+
+.time span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.time p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* New Year message with Asul font */
+#newYearMessage {
+  margin-top: 20px;
+  font-family: 'Asul', sans-serif; /* Asul font for New Year message */
+  font-size: 2.5rem; /* Adjust font size */
+  font-weight: 600; /* Bold text */
+  color: white; /* Set text color to white */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#newYearMessage.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Firework styles */
+.firework {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color);
+  animation: explode 1.5s ease-out infinite;
+}
+
+@keyframes explode {
+  0% {
+      opacity: 1;
+      transform: scale(1) translate(0, 0);
+  }
+  100% {
+      opacity: 0;
+      transform: scale(1.5) translate(var(--x), var(--y));
+  }
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2.5rem; /* Smaller font size for medium screens */
+  }
+
+  .countdown {
+      gap: 15px;
+  }
+
+  .time {
+      padding: 15px 20px; /* Smaller padding */
+      width: 100px; /* Smaller width for time elements */
+  }
+
+  #newYearMessage {
+      font-size: 2rem; /* Adjust New Year message font */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 2rem; /* Further decrease font size for smaller screens */
+  }
+
+  .time {
+      width: 80px; /* Even smaller width for time elements */
+  }
+
+  #newYearMessage {
+      font-size: 1.8rem; /* Smaller New Year message font */
+  }
+}
